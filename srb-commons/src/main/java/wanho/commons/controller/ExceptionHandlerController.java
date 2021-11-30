@@ -5,7 +5,6 @@ import org.springframework.web.bind.MissingPathVariableException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.NoHandlerFoundException;
-import wanho.commons.exception.AccountException;
 import wanho.commons.exception.BusinessException;
 import wanho.commons.exception.UserException;
 import wanho.commons.result.AjaxResult;

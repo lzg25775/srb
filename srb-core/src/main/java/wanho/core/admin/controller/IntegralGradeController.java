@@ -11,6 +11,7 @@ import wanho.commons.result.AjaxResult;
 import wanho.core.admin.entity.IntegralGrade;
 import wanho.core.admin.service.IIntegralGradeService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -45,5 +46,24 @@ public class IntegralGradeController {
         }
         return AjaxResult.ok("删除失败");
     }
+
+    @GetMapping("/get/{id}")
+    @ApiOperation("根据id查询数据")
+    public AjaxResult findById(@ApiParam(value = "积分等级ID",required = true) @PathVariable long id) {
+        IntegralGrade iGrade = iIntegralGradeService.getById(id);
+
+        return AjaxResult.ok("获取数据成功",iGrade);
+    }
+    @PutMapping("update")
+    @ApiOperation("修改数据")
+    public AjaxResult update(@RequestBody IntegralGrade integralGrade ){
+        System.out.println("==================update=====");
+        boolean flag = iIntegralGradeService.updateById(integralGrade);
+        if(flag){
+            return AjaxResult.ok("修改成功!");
+        }
+        return AjaxResult.fail(-3,"修改失败!");
+    }
+
 
 }
