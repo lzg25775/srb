@@ -27,6 +27,7 @@ public class IntegralGradeController {
     public AjaxResult getList(){
         log.info("==============================");
         log.warn("=========================warn");
+        log.warn("abc=============");
 
         List<IntegralGrade> list = iIntegralGradeService.list();
 //        if (true) {
